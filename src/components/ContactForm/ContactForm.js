@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './ContactForm.scss'
+import '../styles/base.scss'
 
 class ContactForm extends Component {
     static propTypes = {
@@ -27,22 +29,24 @@ class ContactForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
+            <form onSubmit={this.handleSubmit} className='contacts-form'>
+                <label className='label'>
                     Name<input
                         type="text"
                         value={this.state.name}
                         onChange={this.handleChange}
-                        name="name" />
+                        name="name"
+                        className='input' />
                 </label>
-                <label>
+                <label className='label'>
                     Number<input
                         type="tel"
                         value={this.state.number}
                         onChange={this.handleChange}
-                        name="number" />
+                        name="number"
+                    className='input'/>
                 </label>
-                <button type="submit">Add contact</button>
+                <button type="submit" className='button contacts-form__button'>Add contact</button>
             </form>
         );
     };

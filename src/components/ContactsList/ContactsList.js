@@ -1,16 +1,18 @@
 import React from 'react';
 import ContactItem from '../ContactItem';
 import PropTypes from 'prop-types';
+import '../styles/base.scss'
+import './ContactList.scss'
 
 
 const ContactsList = ({shownContacts, onClick}) => {
     return (
-        <ul>
+        <ul className='contact-list'>
             {shownContacts().map(({id, name, number}) => {
-                return (<li key={id}><ContactItem
+                return (<li key={id} className='contact-item'><ContactItem
                     name={name}
                     number={number} />
-                    <button type='button' onClick={()=>{onClick(id)}}>Delete</button>
+                    <button type='button' onClick={()=>{onClick(id)}} className='button contact-item__button'>Delete</button>
                 </li>)
             })}
         </ul>

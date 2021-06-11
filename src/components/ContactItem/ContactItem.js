@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ContactItem.scss'
 
 const ContactItem = ({name,number}) => {
     return (<>
-        <span>{name}: </span>
-        <span>{number}</span>
+        <span className='contact-name'>{name}: </span>
+        <span className='contact-number'>{number}</span>
     </>);
 };
 
